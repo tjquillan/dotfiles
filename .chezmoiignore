@@ -1,0 +1,12 @@
+# Core files
+.gitignore
+get-chezmoi.sh
+install.sh
+
+# Arch Linux
+{{- if ne .chezmoi.osRelease.name "Arch Linux" }}
+dot_config/paru
+{{ end }}
+
+# Zsh
+**/*.zwc

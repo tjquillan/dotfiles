@@ -1,0 +1,18 @@
+# Set Path
+export PATH=/usr/local/bin:$PATH
+
+# SSH Key Management
+export SSH_ASKPASS=/usr/bin/ksshaskpass
+
+# GPG Key
+export GPG_TTY=$(tty)
+
+# Set Editor
+export EDITOR=nvim
+
+# load zsh config files
+config_files=($ZDOTDIR/env/*.zsh(N))
+for file in ${config_files}
+do
+	source $file
+done
