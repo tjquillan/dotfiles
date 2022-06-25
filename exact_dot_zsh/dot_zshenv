@@ -1,12 +1,6 @@
 # Set Path
 export PATH=/usr/local/bin:$PATH
 
-# SSH Key Management
-export SSH_ASKPASS=/usr/bin/ksshaskpass
-
-# GPG Key
-export GPG_TTY=$(tty)
-
 # Set Editor
 export EDITOR=nvim
 
