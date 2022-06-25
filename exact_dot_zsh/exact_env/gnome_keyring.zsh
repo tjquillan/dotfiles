@@ -1,4 +1,4 @@
-if [[ -v DESKTOP_SESSION && ! -v SSH_AUTH_SOCK ]];then
+if [[ ! -v SSH_AUTH_SOCK ]];then
     eval $(gnome-keyring-daemon --start)
     export SSH_AUTH_SOCK
 fi
