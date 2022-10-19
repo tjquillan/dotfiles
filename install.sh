@@ -1,5 +1,3 @@
 #!/bin/bash
 
-BASE_DIR=$(realpath $(dirname $0))
-
-"$BASE_DIR"/get-chezmoi.sh -b "$HOME"/.local/bin init --apply tjquillan
+sh -c "$(curl -fsLS get.chezmoi.io)" -- init --apply tjquillan
