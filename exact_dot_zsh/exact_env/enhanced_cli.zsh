@@ -1,5 +1,5 @@
-# Set Path
+#### Path ####
 export PATH="$HOME/bin:$PATH"
 
-# Set Editor
+#### Editor ####
 export EDITOR=nvim

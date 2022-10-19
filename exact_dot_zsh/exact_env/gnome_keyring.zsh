@@ -1,4 +1,4 @@
-if [[ ! -v SSH_AUTH_SOCK ]];then
+if [[ ! -v SSH_AUTH_SOCK ]]; then
     eval $(gnome-keyring-daemon --start 2> /dev/null)
     export SSH_AUTH_SOCK
 fi

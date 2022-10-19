@@ -3,7 +3,7 @@ setopt hist_ignore_all_dups
 setopt hist_ignore_dups
 
 # Add local completions
-fpath+="$ZDOTDIR/completions"
+fpath=("$ZDOTDIR/completions" "$ZDOTDIR/completions/generated" $fpath)
 
 # Bootstrap Zinit
 source "$ZDOTDIR/plugins-bootstrap.zsh"
