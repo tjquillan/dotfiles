@@ -1,0 +1,7 @@
+#!/bin/bash
+
+# glab version: current-context: {{ output "glab" "version" | trim }}
+
+echo -e "\033[0;34m==> Updating glab completions...\033[0m"
+
+glab completion zsh >> "${ZDOTDIR}"/completions/generated/_glab

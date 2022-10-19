@@ -1,0 +1,7 @@
+#!/bin/bash
+
+# Poetry version: current-context: {{ output "poetry" "--version" | trim }}
+
+echo -e "\033[0;34m==> Updating Poetry completions...\033[0m"
+
+poetry completions zsh >> "${ZDOTDIR}"/completions/generated/_poetry

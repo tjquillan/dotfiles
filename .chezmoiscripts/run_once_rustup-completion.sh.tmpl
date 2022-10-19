@@ -1,0 +1,7 @@
+#!/bin/bash
+
+# rustup version: current-context: {{ output "rustup" "--help" | regexFind "rustup \\d+\\.\\d+\\.\\d+" }}
+
+echo -e "\033[0;34m==> Updating rustup completions...\033[0m"
+
+rustup completions zsh >> "${ZDOTDIR}"/completions/generated/_rustup
