@@ -8,5 +8,8 @@ install.sh
 dot_config/paru
 {{ end }}
 
-# Zsh
+##### Zsh #####
+# ZSH Bytecode Files
 **/*.zwc
+# Generated ZSH Completions
+.zsh/completions/generated/*
