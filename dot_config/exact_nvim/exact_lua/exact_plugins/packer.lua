@@ -1,7 +1,7 @@
 local present, packer = pcall(require, "packer")
 
 if not present then
-    local install_path = fn.stdpath('data')..'/site/pack/packer/opt/packer.nvim'
+    local install_path = fn.stdpath('data') .. '/site/pack/packer/opt/packer.nvim'
     if fn.empty(fn.glob(install_path)) > 0 then
         fn.system({'git', 'clone', '--depth', '1', 'https://github.com/wbthomason/packer.nvim', install_path})
     end
@@ -18,6 +18,7 @@ packer.init({
         end,
         prompt_border = "single",
     },
+    compile_path = vim.fn.stdpath('data') .. '/site/plugin/packer_compiled.lua',
     auto_clean = true,
     compile_on_sync = true,
     auto_reload_compiled = true,

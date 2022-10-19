@@ -5,10 +5,6 @@ local call = vim.call
 local g = vim.g
 local opt = vim.opt
 
--- Use new filetype.lua
-g.do_filetype_lua = 1
-g.did_load_filetypes = 0
-
 -- Basic Options
 opt.termguicolors = true
 opt.hidden = true
@@ -55,6 +51,7 @@ g.loaded_ruby_provider = 0
 g.loaded_node_provider = 0
 g.loaded_perl_provider = 0
 
+-- Plugins
 local present, impatient = pcall(require, 'impatient')
 if present then
     impatient.enable_profile()

@@ -70,9 +70,15 @@ return packer.startup(function(use)
         }
     }
 
+    -- Meson
+    use {
+        'williamboman/mason.nvim',
+        config = require('plugins.config.mason.config')
+    }
+
     -- LSP
     use {
-        'williamboman/nvim-lsp-installer',
+        'williamboman/mason-lspconfig.nvim',
         {
             'neovim/nvim-lspconfig',
             setup = require('plugins.config.lsp.setup'),

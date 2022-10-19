@@ -19,20 +19,12 @@ return function()
         'eslint'
     }
 
-    require("nvim-lsp-installer").setup({
-        ensure_installed = servers,
-        ui = {
-            icons = {
-                server_installed = "✓",
-                server_pending = "➜",
-                server_uninstalled = "✗"
-            }
-        }
+    require("mason-lspconfig").setup({
+        ensure_installed = servers
     })
 
-    -- Add additional capabilities supported by nvim-cmp
-    local capabilities = vim.lsp.protocol.make_client_capabilities()
-    capabilities = require('cmp_nvim_lsp').update_capabilities(capabilities)
+    -- The nvim-cmp almost supports LSP's capabilities so You should advertise it to LSP servers..
+    local capabilities = require('cmp_nvim_lsp').default_capabilities()
 
     -- Handlers
     local handlers = require('plugins.config.lsp.handlers')

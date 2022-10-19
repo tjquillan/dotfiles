@@ -24,12 +24,12 @@ return function()
         },
         actions = {
             open_file = {
-               resize_window = true,
+                resize_window = true,
             },
         },
         renderer = {
             indent_markers = {
-               enable = true,
+                enable = true,
             },
             icons = {
                 webdev_colors = true,
