@@ -1,0 +1,10 @@
+#!/bin/bash
+
+{{ if not (lookPath "nvim") }}
+echo -e "\033[0;34m==> Installing Neovim...\033[0m"
+
+mkdir -p $HOME/.local/bin
+cd $HOME/.local/bin
+curl -fsSL https://github.com/neovim/neovim/releases/latest/download/nvim.appimage -o nvim
+chmod +x nvim
+{{ end }}
