@@ -134,9 +134,14 @@ return packer.startup(function(use)
 
     -- File Explorer
     use {
-        'kyazdani42/nvim-tree.lua',
-        setup = require('plugins.config.nvim-tree.setup'),
-        config = require('plugins.config.nvim-tree.config'),
+        'nvim-neo-tree/neo-tree.nvim',
+        branch = 'v2.x',
+        requires = {
+            'nvim-lua/plenary.nvim',
+            'kyazdani42/nvim-web-devicons',
+            'MunifTanjim/nui.nvim',
+        },
+        config = require('plugins.config.neo-tree.config'),
     }
     
     -- Git
