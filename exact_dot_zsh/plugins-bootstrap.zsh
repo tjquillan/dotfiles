@@ -1,10 +1,15 @@
-ZSH_DATA_DIR="$XDG_DATA_HOME/zsh"
-
 declare -A ZI
-ZI[HOME_DIR]="${ZSH_DATA_DIR}/zi"
+ZI[HOME_DIR]="$XDG_DATA_HOME/zsh/zi"
 ZI[BIN_DIR]="${ZI[HOME_DIR]}/bin"
+ZI[CACHE_DIR]="$XDG_CACHE_HOME/zsh/zi"
+ZI[CONFIG_DIR]="$ZDOTDIR/zi"
+ZI[ZCOMPDUMP_PATH]="${ZI[CACHE_DIR]}/.zcompdump"
 ZI[ZMODULES_DIR]="${ZI[HOME_DIR]}/zmodules"
-ZI[ZCOMPDUMP_PATH]="${ZSH_DATA_DIR}/zcompdump"
+
+# ZI[CACHE_DIR] and ZI[CONFIG_DIR] don't work. Use these for now
+# See: https://github.com/z-shell/zi/blob/c60bd2428f7890301e6ee31d8df5ad49dd2f9151/zi.zsh#L87-L88
+ZSH_CACHE_DIR="${ZI[CACHE_DIR]}"
+ZCDR="${ZI[CONFIG_DIR]}"
 
 if [[ ! -f "${ZI[BIN_DIR]}/zi.zsh" ]]; then
     command git clone https://github.com/z-shell/zi.git "${ZI[BIN_DIR]}"
@@ -19,7 +24,7 @@ autoload -Uz _zi
 (( ${+_comps} )) && _comps[zi]=_zi
 
 # =============== [Completions] ===============
-zi light-mode lucid wait as"completion" blockf for \
+zi light-mode lucid wait as"completion" for \
     zsh-users/zsh-completions \
     gradle/gradle-completion
 
