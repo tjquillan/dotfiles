@@ -1,9 +1,13 @@
-# Core files
+##### Core files #####
 .gitignore
 get-chezmoi.sh
 install.sh
 
-# Arch Linux
+##### Always Ignore #####
+**/.pytest_cache
+**/.pytest_cache/**/*
+
+##### Arch Linux #####
 {{- if ne .chezmoi.osRelease.name "Arch Linux" }}
 dot_config/paru
 {{ end }}
