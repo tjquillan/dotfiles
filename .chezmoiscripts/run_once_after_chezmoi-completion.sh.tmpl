@@ -1,9 +1,9 @@
 #!/bin/bash
 
-{{ if lookPath "chezmoi" }}
-{{ output "chezmoi" "--version" | trim | comment "# " }}
+{{ if lookPath "chezmoi" -}}
+{{- output "chezmoi" "--version" | trim | comment "# " }}
 
 echo -e "\033[0;34m==> Updating chezmoi completions...\033[0m"
 
 chezmoi completion zsh >> "${ZDOTDIR}"/completions/generated/_chezmoi
-{{ end }}
+{{ end -}}
