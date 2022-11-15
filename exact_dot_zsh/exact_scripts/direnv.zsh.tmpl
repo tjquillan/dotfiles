@@ -1,3 +1,4 @@
-{{ if lookPath "direnv" }}
-{{ output "direnv" "hook" "zsh" }}
-{{ end }}
+{{- if lookPath "direnv" }}
+{{- output "direnv" "hook" "zsh" | trim }}
+
+{{ end -}}
