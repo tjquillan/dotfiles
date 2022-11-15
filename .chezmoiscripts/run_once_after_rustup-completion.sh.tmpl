@@ -1,7 +1,7 @@
 #!/bin/bash
 
 {{ if lookPath "rustup" }}
-# rustup version: current-context: {{ output "rustup" "--help" | regexFind "rustup \\d+\\.\\d+\\.\\d+" }}
+{{ output "rustup" "--help" | regexFind "rustup \\d+\\.\\d+\\.\\d+" | comment "# " }}
 
 echo -e "\033[0;34m==> Updating rustup completions...\033[0m"
 

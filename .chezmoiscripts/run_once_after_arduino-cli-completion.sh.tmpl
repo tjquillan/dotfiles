@@ -3,7 +3,7 @@
 {{ if lookPath "arduino-cli" }}
 {{ $arduino_cli_version := output "arduino-cli" "version" "--format" "json" | fromJson }}
 
-# arduino-cli version: current-context: {{ get $arduino_cli_version "VersionString" }}
+{{ get $arduino_cli_version "VersionString" | comment "# " }}
 
 echo -e "\033[0;34m==> Updating arduino-cli completions...\033[0m"
 

@@ -1,7 +1,7 @@
 #!/bin/bash
 
 {{ if lookPath "chezmoi" }}
-# chezmoi version: current-context: {{ output "chezmoi" "--version" | trim }}
+{{ output "chezmoi" "--version" | trim | comment "# " }}
 
 echo -e "\033[0;34m==> Updating chezmoi completions...\033[0m"
 

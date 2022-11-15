@@ -1,7 +1,7 @@
 #!/bin/bash
 
 {{ if lookPath "glab" }}
-# glab version: current-context: {{ output "glab" "version" | trim }}
+{{ output "glab" "version" | trim | comment "# " }}
 
 echo -e "\033[0;34m==> Updating glab completions...\033[0m"
 

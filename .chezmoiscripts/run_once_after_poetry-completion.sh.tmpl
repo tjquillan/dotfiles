@@ -1,7 +1,7 @@
 #!/bin/bash
 
 {{ if lookPath "poetry" }}
-# Poetry version: current-context: {{ output "poetry" "--version" | trim }}
+{{ output "poetry" "--version" | trim | comment "# " }}
 
 echo -e "\033[0;34m==> Updating poetry completions...\033[0m"
 
