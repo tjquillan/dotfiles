@@ -1,9 +1,10 @@
+{{- if lookPath "gh" -}}
 #!/bin/bash
 
-{{ if lookPath "gh" -}}
-{{- output "gh" "--version" | trim | comment "# " }}
+{{ output "gh" "--version" | trim | comment "# " }}
 
 echo -e "\033[0;34m==> Updating gh completions...\033[0m"
 
 gh completion --shell zsh >> "${ZDOTDIR}"/completions/generated/_gh
-{{- end }}
+
+{{ end -}}

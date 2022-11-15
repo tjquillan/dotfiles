@@ -1,11 +1,12 @@
+{{- if lookPath "arduino-cli" -}}
 #!/bin/bash
 
-{{ if lookPath "arduino-cli" -}}
-{{- $arduino_cli_version := output "arduino-cli" "version" "--format" "json" | fromJson -}}
+{{ $arduino_cli_version := output "arduino-cli" "version" "--format" "json" | fromJson -}}
 
 {{- get $arduino_cli_version "VersionString" | comment "# " }}
 
 echo -e "\033[0;34m==> Updating arduino-cli completions...\033[0m"
 
 arduino-cli completion zsh 2>/dev/null >"${ZDOTDIR}"/completions/generated/_arduino-cli
-{{- end }}
+
+{{ end -}}
