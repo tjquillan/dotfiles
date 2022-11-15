@@ -40,14 +40,14 @@ zi is-snippet lucid wait for \
 
 # ================= [Prompt] ==================
 zi light-mode lucid for \
-    iboyperson/p9k-theme-pastel \
+    tjquillan/p9k-theme-pastel \
     depth=1 \
         romkatv/powerlevel10k
 
 # ================== [QOL] ====================
 zi light-mode lucid wait for \
-    iboyperson/zsh-pipenv \
-    iboyperson/zsh-gradle
+    tjquillan/zsh-pipenv \
+    tjquillan/zsh-gradle
 
 # ================= [Plugins] =================
 zi light-mode lucid wait for \
