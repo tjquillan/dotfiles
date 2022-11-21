@@ -12,3 +12,10 @@ export CONDARC="$XDG_CONFIG_HOME/conda/condarc"
 #### Path ####
 export PATH="$HOME/.local/bin:$PATH"
 
+{{- if lookPath "pyenv" }}
+
+#### Pyenv ####
+export PYTHON_BUILD_ARIA2_OPTS="-x 10 -k 1M"
+export PYENV_ROOT="$XDG_DATA_HOME/pyenv"
+export PATH="$PYENV_ROOT/bin:$PATH"
+{{- end }}
