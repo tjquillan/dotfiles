@@ -22,8 +22,9 @@ autoload -Uz _zinit
 (( ${+_comps} )) && _comps[zinit]=_zinit
 
 # =============== [Completions] ===============
-zinit light-mode lucid wait as"completion" for \
-    zsh-users/zsh-completions \
+zinit light-mode lucid wait as"completion" blockf for \
+    atpull'zinit creinstall -q $PWD' \
+        zsh-users/zsh-completions \
     gradle/gradle-completion
 
 zinit is-snippet lucid wait as"completion" blockf for \
@@ -49,7 +50,7 @@ zinit light-mode lucid wait for \
 
 # ================= [Plugins] =================
 zinit light-mode lucid wait for \
-    atinit"ZINIT[COMPINIT_OPTS]=-C; zicompinit; zicdreplay" \
-        z-shell/F-Sy-H \
     wfxr/forgit \
-    ael-code/zsh-colored-man-pages
+    ael-code/zsh-colored-man-pages \
+    atinit"ZINIT[COMPINIT_OPTS]=-C; zicompinit; zicdreplay" \
+        z-shell/F-Sy-H
