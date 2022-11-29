@@ -8,14 +8,12 @@ export PYLINTHOME="$XDG_CACHE_HOME"/pylint
 export PYLINTRC="$XDG_CONFIG_HOME"/pylint/pylintrc
 # Conda (https://www.anaconda.com/)
 export CONDARC="$XDG_CONFIG_HOME/conda/condarc"
+# Pyenv (https://github.com/pyenv/pyenv)
+export PYENV_ROOT="$XDG_DATA_HOME/pyenv"
 
 #### Path ####
 export PATH="$HOME/.local/bin:$PATH"
-
-{{- if lookPath "pyenv" }}
+PATH="$PYENV_ROOT/bin:$PATH"
 
 #### Pyenv ####
 export PYTHON_BUILD_ARIA2_OPTS="-x 10 -k 1M"
-export PYENV_ROOT="$XDG_DATA_HOME/pyenv"
-export PATH="$PYENV_ROOT/bin:$PATH"
-{{- end }}
