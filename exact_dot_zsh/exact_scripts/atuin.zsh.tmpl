@@ -1,0 +1,9 @@
+{{- if lookPath "atuin" -}}
+# We will do our own keybinds
+ATUIN_NOBIND=true
+
+{{ output "atuin" "init" "zsh" | trim }}
+
+bindkey '^r' _atuin_search_widget
+
+{{ end -}}
