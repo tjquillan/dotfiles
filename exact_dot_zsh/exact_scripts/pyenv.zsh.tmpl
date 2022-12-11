@@ -1,3 +1,4 @@
 {{- if lookPath "pyenv" -}}
+{{ output "pyenv" "--version" | trim | comment "# " }}
 {{ output "pyenv" "init" "-" "zsh" | trim }}
 {{ end -}}
