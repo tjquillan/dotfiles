@@ -1,5 +1,4 @@
 return function()
-    vim.g.neo_tree_remove_legacy_commands = 1
     require("neo-tree").setup({
         popup_border_style = "rounded",
         enable_git_status = true,
