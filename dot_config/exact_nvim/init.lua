@@ -4,6 +4,7 @@ local fn = vim.fn
 local call = vim.call
 local g = vim.g
 local opt = vim.opt
+local api = vim.api
 
 -- Basic Options
 opt.termguicolors = true
@@ -57,8 +58,23 @@ if present then
     impatient.enable_profile()
 end
 
-cmd([[command! PackerInstall packadd packer.nvim | lua require('plugins').install()]])
-cmd([[command! PackerUpdate packadd packer.nvim | lua require('plugins').update()]])
-cmd([[command! PackerSync packadd packer.nvim | lua require('plugins').sync()]])
-cmd([[command! PackerClean packadd packer.nvim | lua require('plugins').clean()]])
-cmd([[command! PackerCompile packadd packer.nvim | lua require('plugins').compile()]])
+api.nvim_create_user_command('PackerInstall', function()
+  cmd [[packadd packer.nvim]]
+  require('plugins').install()
+end, {})
+api.nvim_create_user_command('PackerUpdate', function()
+  cmd [[packadd packer.nvim]]
+  require('plugins').update()
+end, {})
+api.nvim_create_user_command('PackerSync', function()
+  cmd [[packadd packer.nvim]]
+  require('plugins').sync()
+end, {})
+api.nvim_create_user_command('PackerClean', function()
+  cmd [[packadd packer.nvim]]
+  require('plugins').clean()
+end, {})
+api.nvim_create_user_command('PackerCompile', function()
+  cmd [[packadd packer.nvim]]
+  require('plugins').compile()
+end, {})
