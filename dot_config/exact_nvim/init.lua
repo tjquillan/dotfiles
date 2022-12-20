@@ -53,28 +53,4 @@ g.loaded_node_provider = 0
 g.loaded_perl_provider = 0
 
 -- Plugins
-local present, impatient = pcall(require, 'impatient')
-if present then
-    impatient.enable_profile()
-end
-
-api.nvim_create_user_command('PackerInstall', function()
-  cmd [[packadd packer.nvim]]
-  require('plugins').install()
-end, {})
-api.nvim_create_user_command('PackerUpdate', function()
-  cmd [[packadd packer.nvim]]
-  require('plugins').update()
-end, {})
-api.nvim_create_user_command('PackerSync', function()
-  cmd [[packadd packer.nvim]]
-  require('plugins').sync()
-end, {})
-api.nvim_create_user_command('PackerClean', function()
-  cmd [[packadd packer.nvim]]
-  require('plugins').clean()
-end, {})
-api.nvim_create_user_command('PackerCompile', function()
-  cmd [[packadd packer.nvim]]
-  require('plugins').compile()
-end, {})
+require("tjquillan.lazy")
