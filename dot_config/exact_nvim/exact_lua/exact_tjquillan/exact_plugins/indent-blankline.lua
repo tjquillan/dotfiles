@@ -1,6 +1,6 @@
 local M = {
     "lukas-reineke/indent-blankline.nvim",
-    event = "BufReadPre",
+    event = { "BufRead", "BufNewFile" },
 }
 
 function M.config()
@@ -12,19 +12,27 @@ function M.config()
         show_trailing_blankline_indent = false,
         show_current_context = true,
         filetype_exclude = {
-            "help",
-            "terminal",
+            "",
             "alpha",
-            "packer",
+            "help",
+            "lazy",
+            "lsp-installer",
             "lspinfo",
+            "mason",
+            "neo-tree",
+            "neogitstatus",
+            "NvimTree",
+            "packer",
+            "startify",
             "TelescopePrompt",
             "TelescopeResults",
-            "lsp-installer",
-            "NvimTree",
+            "terminal",
             "Trouble",
-            "",
         },
-        buftype_exclude = { "terminal" },
+        buftype_exclude = {
+            "terminal",
+            "nofile",
+        },
     })
 end
 

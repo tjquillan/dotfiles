@@ -16,9 +16,38 @@ require("lazy").setup("tjquillan.plugins", {
         lazy = true,
     },
     install = {
-        colorscheme = { "onedark" },
+        colorscheme = { "onedark", "default" },
     },
     ui = {
         border = "rounded",
+    },
+    change_detection = {
+        enabled = false,
+        notify = false,
+    },
+    performance = {
+        rtp = {
+            disabled_plugins = {
+                "2html_plugin",
+                "getscriptPlugin",
+                "gzip",
+                "logiPat",
+                "matchit",
+                "matchparen",
+                "netrw",
+                "netrwFileHandlers",
+                "netrwPlugin",
+                "netrwSettings",
+                "rrhelper",
+                "tar",
+                "tarPlugin",
+                "tohtml",
+                "tutor",
+                "vimball",
+                "vimballPlugin",
+                "zip",
+                "zipPlugin",
+            },
+        },
     },
 })

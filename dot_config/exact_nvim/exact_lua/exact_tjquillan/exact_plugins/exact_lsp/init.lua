@@ -1,6 +1,6 @@
 local M = {
     "neovim/nvim-lspconfig",
-    event = "BufReadPre",
+    event = { "BufReadPre", "BufNewFile" },
     dependencies = {
         "hrsh7th/cmp-nvim-lsp",
         "williamboman/mason-lspconfig.nvim",
@@ -16,7 +16,6 @@ function M.config()
     local servers = require("tjquillan.plugins.lsp.servers")
     local capabilities = require("cmp_nvim_lsp").default_capabilities()
 
-    ---@type _.lspconfig.options
     local options = {
         on_attach = handlers.on_attach,
         capabilities = capabilities,

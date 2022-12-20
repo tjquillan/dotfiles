@@ -1,12 +1,13 @@
 local M = {
     "nvim-treesitter/nvim-treesitter",
-    event = "BufReadPre",
+    event = { "BufReadPre", "BufNewFile" },
     cmd = {
         "TSUpdate",
     },
     dependencies = {
         "p00f/nvim-ts-rainbow",
         "windwp/nvim-ts-autotag",
+        "JoosepAlviste/nvim-ts-context-commentstring",
     },
 }
 
@@ -31,6 +32,10 @@ function M.config()
         rainbow = {
             enable = true,
             extended_mode = true,
+        },
+        context_commentstring = {
+            enable = true,
+            enable_autocmd = false,
         },
     })
 end
