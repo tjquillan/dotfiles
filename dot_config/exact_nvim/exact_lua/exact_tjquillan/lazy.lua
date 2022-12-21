@@ -16,7 +16,7 @@ require("lazy").setup("tjquillan.plugins", {
         lazy = true,
     },
     install = {
-        colorscheme = { "onedark", "default" },
+        colorscheme = { "onedark", "habamax" },
     },
     ui = {
         border = "rounded",

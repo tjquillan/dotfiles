@@ -1,20 +1,36 @@
 local M = {
+    ansiblels = {},
     bashls = {},
-    cmake = {},
     clangd = {},
-    omnisharp = {},
+    cmake = {},
     cssls = {},
+    dockerls = {},
+    eslint = {},
     gopls = {},
     html = {},
     jdtls = {},
-    jsonls = {},
+    jsonls = {
+        settings = {
+            json = {
+                format = {
+                    enable = true,
+                },
+                schemas = require("schemastore").json.schemas(),
+                validate = { enable = true },
+            },
+        },
+    },
     kotlin_language_server = {},
-    sumneko_lua = {},
+    marksman = {},
+    omnisharp = {},
     powershell_es = {},
     pyright = {},
     rust_analyzer = {},
+    sumneko_lua = {},
+    teal_ls = {},
     tsserver = {},
-    eslint = {},
+    vimls = {},
+    yamlls = {},
 }
 
 return M

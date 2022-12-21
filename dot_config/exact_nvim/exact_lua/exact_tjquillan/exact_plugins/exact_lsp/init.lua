@@ -14,7 +14,8 @@ function M.config()
 
     local handlers = require("tjquillan.plugins.lsp.handlers")
     local servers = require("tjquillan.plugins.lsp.servers")
-    local capabilities = require("cmp_nvim_lsp").default_capabilities()
+    local capabilities = vim.lsp.protocol.make_client_capabilities()
+    capabilities = require("cmp_nvim_lsp").default_capabilities(capabilities)
 
     local options = {
         on_attach = handlers.on_attach,
