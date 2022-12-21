@@ -1,5 +1,19 @@
-[".local/share/fonts"]
+[".local/share/fonts/nerd-fonts-symbols"]
 type = "archive"
 url = "https://github.com/ryanoasis/nerd-fonts/releases/latest/download/NerdFontsSymbolsOnly.zip"
 refreshPeriod = "168h"
 exclude = ["*.md", "*Windows Compatible.ttf"]
+
+[".local/share/fonts/nerd-fonts-fira-code"]
+type = "archive"
+url = "https://github.com/ryanoasis/nerd-fonts/releases/latest/download/FiraCode.zip "
+refreshPeriod = "168h"
+exclude = ["*.md", "*Windows Compatible.ttf", "LICENSE"]
+
+[".local/share/fonts/fira-code"]
+type = "archive"
+url = "https://github.com/tonsky/FiraCode/releases/download/6.2/Fira_Code_v6.2.zip"
+refreshPeriod = "168h"
+stripComponents = 1
+exclude = ["*"]
+include = ["*.ttf"]
