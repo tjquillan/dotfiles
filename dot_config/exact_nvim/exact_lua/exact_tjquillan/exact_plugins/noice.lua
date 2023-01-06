@@ -1,12 +1,40 @@
 local M = {
     "folke/noice.nvim",
     lazy = false,
+    dependencies = {
+        "MunifTanjim/nui.nvim",
+        "rcarriga/nvim-notify",
+    },
 }
 
 function M.config()
     require("noice").setup({
+        views = {
+            notify_replace = {
+                backend = "notify",
+                fallback = "mini",
+                format = "notify",
+                replace = true,
+                merge = false,
+            },
+        },
         lsp = {
-            -- override markdown rendering so that **cmp** and other plugins use **Treesitter**
+            progress = {
+                view = "notify_replace",
+                format = {
+                    { "{spinner} ", hl_group = "NoiceLspProgressSpinner" },
+                    {
+                        "{progress} ",
+                        key = "progress.percentage",
+                        contents = {
+                            { "{data.progress.message} " },
+                        },
+                    },
+                    "({data.progress.percentage}%) ",
+                    { "{data.progress.title} ", hl_group = "NoiceLspProgressTitle" },
+                    { "{data.progress.client} ", hl_group = "NoiceLspProgressClient" },
+                },
+            },
             override = {
                 ["vim.lsp.util.convert_input_to_markdown_lines"] = true,
                 ["vim.lsp.util.stylize_markdown"] = true,

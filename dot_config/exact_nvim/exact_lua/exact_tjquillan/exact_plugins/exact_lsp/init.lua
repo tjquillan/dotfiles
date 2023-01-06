@@ -8,9 +8,32 @@ local M = {
     },
 }
 
+M.signs = { Error = " ", Warn = " ", Hint = " ", Info = " " }
+
+function M.init()
+    vim.keymap.set("n", "gl", function()
+        vim.diagnostic.open_float({ border = "rounded" })
+    end, { silent = true })
+    vim.keymap.set("n", "[d", function()
+        vim.diagnostic.goto_prev({ border = "rounded" })
+    end, { silent = true })
+    vim.keymap.set("n", "]d", function()
+        vim.diagnostic.goto_next({ border = "rounded" })
+    end, { silent = true })
+    vim.keymap.set("n", "<leader>q", vim.diagnostic.setloclist, { silent = true })
+
+    for type, icon in pairs(M.signs) do
+        local hl = "DiagnosticSign" .. type
+        vim.fn.sign_define(hl, { text = icon, texthl = hl, numhl = "" })
+    end
+end
+
 function M.config()
+    require("neodev").setup({})
+
     require("mason")
     require("tjquillan.plugins.lsp.diagnostics").setup()
+    require("neoconf").setup({})
 
     local handlers = require("tjquillan.plugins.lsp.handlers")
     local servers = require("tjquillan.plugins.lsp.servers")
@@ -31,6 +54,8 @@ function M.config()
             lspconfig[server].setup(opts)
         end
     end
+
+    require("tjquillan.plugins.null-ls").setup(options)
 end
 
 return M

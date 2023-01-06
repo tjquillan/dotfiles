@@ -26,7 +26,14 @@ local M = {
     powershell_es = {},
     pyright = {},
     rust_analyzer = {},
-    sumneko_lua = {},
+    sumneko_lua = {
+        settings = {
+            Lua = {
+                telemetry = { enable = false },
+            },
+        },
+    },
+    taplo = {},
     teal_ls = {},
     tsserver = {},
     vimls = {},

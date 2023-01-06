@@ -35,6 +35,12 @@ vim.opt.autoindent = true -- Copy indent from current line when starting a new l
 vim.opt.expandtab = true -- Use spaces instead of tabs
 vim.opt.tabstop = 4 -- Number of spaces tabs count for
 vim.opt.wrap = false -- Disable line wrap
+vim.opt.mouse = "a" -- Enable mouse mode
+vim.opt.pumblend = 10 -- Enables pseudo-transparency for the popup-menu
+vim.opt.laststatus = 3 -- always and ONLY the last window will have a status line
+
+vim.g.mapleader = " " -- Define the <leader> key
+vim.g.maplocalleader = " " -- Define the <localleader> key
 
 -- don't load the plugins below
 local builtins = {
