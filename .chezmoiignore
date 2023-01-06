@@ -4,16 +4,25 @@ get-chezmoi.sh
 install.sh
 
 ##### Always Ignore #####
-**/.pytest_cache
-**/.pytest_cache/**/*
+**/.pytest_cache/
 
 ##### Arch Linux #####
-{{- if ne .chezmoi.osRelease.name "Arch Linux" }}
-dot_config/paru
+{{ if ne .chezmoi.osRelease.name "Arch Linux" }}
+.config/paru
 {{ end }}
 
 ##### Zsh #####
 # ZSH Bytecode Files
 **/*.zwc
 # Generated ZSH Completions
-.zsh/completions/generated/*
+.zsh/completions/generated/
+
+##### Kitty #####
+{{ if not (lookPath "kitty") }}
+.config/kitty/
+{{ end }}
+
+##### Wezterm #####
+{{ if not (lookPath "wezterm") }}
+.config/wezterm/
+{{ end }}
