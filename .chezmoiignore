@@ -41,3 +41,9 @@ install.sh
 {{ if not (lookPath "npm") }}
 .config/npm/
 {{ end }}
+
+##### ZSH #####
+{{ if not (lookPath "zsh") }}
+.zsh/
+.zshenv
+{{ end }}
