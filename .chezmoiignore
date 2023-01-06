@@ -26,3 +26,18 @@ install.sh
 {{ if not (lookPath "wezterm") }}
 .config/wezterm/
 {{ end }}
+
+##### Bat #####
+{{ if not (lookPath "bat") }}
+.config/bat/
+{{ end }}
+
+##### Neovim #####
+{{ if not (lookPath "nvim") }}
+.config/nvim/
+{{ end }}
+
+##### NPM #####
+{{ if not (lookPath "npm") }}
+.config/npm/
+{{ end }}
