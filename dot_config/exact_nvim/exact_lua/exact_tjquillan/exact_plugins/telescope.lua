@@ -1,15 +1,15 @@
 local M = {
     "nvim-telescope/telescope.nvim",
     cmd = "Telescope",
+    branch = "0.1.x",
     dependencies = {
         { "nvim-telescope/telescope-fzf-native.nvim", build = "make" },
     },
 }
 
-function M.config()
-    local telescope = require("telescope")
+function M.opts()
     local actions = require("telescope.actions")
-    telescope.setup({
+    return {
         defaults = {
             mappings = {
                 i = {
@@ -25,7 +25,13 @@ function M.config()
                 case_mode = "smart_case",
             },
         },
-    })
+    }
+end
+
+function M.config(_, opts)
+    local telescope = require("telescope")
+
+    telescope.setup(opts)
 
     telescope.load_extension("fzf")
     telescope.load_extension("notify")
@@ -39,19 +45,35 @@ function M.project_files()
     end
 end
 
-function M.init()
-    vim.keymap.set("n", "<leader>ff", function()
-        require("tjquillan.plugins.telescope").project_files()
-    end, { desc = "Find File" })
-    vim.keymap.set("n", "<leader>fg", function()
-        require("telescope.builtin").live_grep()
-    end, { desc = "Live Grep" })
-    vim.keymap.set("n", "<leader>fb", function()
-        require("telescope.builtin").buffers()
-    end, { desc = "List Buffers" })
-    vim.keymap.set("n", "<leader>fh", function()
-        require("telescope.builtin").help_tags()
-    end, { desc = "List Help Tags" })
-end
+M.keys = {
+    {
+        "<leader>ff",
+        function()
+            require("tjquillan.plugins.telescope").project_files()
+        end,
+        desc = "Find File",
+    },
+    {
+        "<leader>fg",
+        function()
+            require("tjquillan.plugins.telescope").project_files()
+        end,
+        desc = "Live Grep",
+    },
+    {
+        "<leader>fb",
+        function()
+            require("telescope.builtin").live_grep()
+        end,
+        desc = "List Buffers",
+    },
+    {
+        "<leader>fh",
+        function()
+            require("telescope.builtin").help_tags()
+        end,
+        desc = "List Help Tags",
+    },
+}
 
 return M
