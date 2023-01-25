@@ -2,7 +2,7 @@
 type = "archive"
 url = "https://github.com/ryanoasis/nerd-fonts/releases/latest/download/NerdFontsSymbolsOnly.zip"
 refreshPeriod = "168h"
-exclude = ["*.md", "*Windows Compatible.ttf"]
+exclude = ["*.md", "*Windows Compatible.ttf", "LICENSE"]
 
 [".local/share/fonts/nerd-fonts-fira-code"]
 type = "archive"
