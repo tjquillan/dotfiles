@@ -38,6 +38,7 @@ require("lazy").setup("tjquillan.plugins", {
                 "netrwFileHandlers",
                 "netrwPlugin",
                 "netrwSettings",
+                "rplugin",
                 "rrhelper",
                 "tar",
                 "tarPlugin",

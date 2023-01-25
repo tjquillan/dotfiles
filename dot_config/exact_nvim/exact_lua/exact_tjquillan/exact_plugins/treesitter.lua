@@ -3,6 +3,7 @@ local M = {
     event = { "BufReadPre", "BufNewFile", "CmdlineEnter" },
     cmd = {
         "TSUpdate",
+        "TSInstall",
     },
     dependencies = {
         "p00f/nvim-ts-rainbow",
