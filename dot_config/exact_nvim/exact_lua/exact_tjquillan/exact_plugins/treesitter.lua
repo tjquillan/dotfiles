@@ -1,6 +1,8 @@
 local M = {
     "nvim-treesitter/nvim-treesitter",
-    event = { "BufReadPre", "BufNewFile", "CmdlineEnter" },
+    version = false,
+    build = ":TSUpdate",
+    event = { "BufReadPost", "BufNewFile", "CmdlineEnter" },
     cmd = {
         "TSUpdate",
         "TSInstall",
@@ -12,33 +14,32 @@ local M = {
     },
 }
 
-function M.build()
-    local ts_update = require("nvim-treesitter.install").update({ with_sync = true })
-    ts_update()
-end
+---@type TSConfig
+M.opts = {
+    ensure_installed = "all",
+    highlight = {
+        enable = true,
+        additional_vim_regex_highlighting = false,
+    },
+    indent = {
+        enable = true,
+    },
+    autotag = {
+        enable = true,
+    },
+    rainbow = {
+        enable = true,
+        extended_mode = true,
+    },
+    context_commentstring = {
+        enable = true,
+        enable_autocmd = false,
+    },
+}
 
-function M.config()
-    require("nvim-treesitter.configs").setup({
-        ensure_installed = "all",
-        highlight = {
-            enable = true,
-            additional_vim_regex_highlighting = false,
-        },
-        indent = {
-            enable = true,
-        },
-        autotag = {
-            enable = true,
-        },
-        rainbow = {
-            enable = true,
-            extended_mode = true,
-        },
-        context_commentstring = {
-            enable = true,
-            enable_autocmd = false,
-        },
-    })
+---@param opts TSConfig
+function M.config(_, opts)
+    require("nvim-treesitter.configs").setup(opts)
 end
 
 return M
