@@ -39,7 +39,7 @@ local M = {
             },
         },
     },
-    sumneko_lua = {
+    lua_ls = {
         settings = {
             Lua = {
                 telemetry = { enable = false },
