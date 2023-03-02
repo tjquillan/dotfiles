@@ -1,6 +1,7 @@
 local M = {
     "L3MON4D3/LuaSnip",
     version = "1.*",
+    build = "make install_jsregexp",
     event = "InsertEnter",
     dependencies = {
         {
@@ -10,6 +11,11 @@ local M = {
             end,
         },
     },
+}
+
+M.opts = {
+    history = true,
+    delete_check_events = "TextChanged",
 }
 
 return M

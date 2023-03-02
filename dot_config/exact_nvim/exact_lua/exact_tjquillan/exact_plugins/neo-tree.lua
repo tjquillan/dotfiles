@@ -1,7 +1,6 @@
 local M = {
     "nvim-neo-tree/neo-tree.nvim",
     branch = "v2.x",
-    event = "BufEnter",
     cmd = "Neotree",
     dependencies = {
         "nvim-lua/plenary.nvim",
@@ -12,7 +11,12 @@ local M = {
 
 function M.init()
     vim.g.neo_tree_remove_legacy_commands = 1
-    
+    if vim.fn.argc() == 1 then
+        local stat = vim.loop.fs_stat(vim.fn.argv(0))
+        if stat and stat.type == "directory" then
+            require("neo-tree")
+        end
+    end
 end
 
 M.opts = {
