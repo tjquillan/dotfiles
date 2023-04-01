@@ -1,8 +1,0 @@
-{{- if not (lookPath "rustup") -}}
-#!/bin/bash
-
-echo -e "\033[0;34m==> Installing Rustup...\033[0m"
-
-curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | zsh -s -- --no-modify-path -y
-
-{{ end -}}

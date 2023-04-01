@@ -1,7 +1,0 @@
-{{- if not (lookPath "poetry") -}}
-#!/bin/sh
-echo -e "\033[0;34m==> Installing Poetry...\033[0m"
-
-curl -sSL https://install.python-poetry.org | python3 -
-
-{{ end -}}
