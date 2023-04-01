@@ -17,3 +17,6 @@ PATH="$PYENV_ROOT/bin:$PATH"
 
 #### Pyenv ####
 export PYTHON_BUILD_ARIA2_OPTS="-x 10 -k 1M"
+
+#### Pipenv ####
+export PIPENV_VENV_IN_PROJECT=1
