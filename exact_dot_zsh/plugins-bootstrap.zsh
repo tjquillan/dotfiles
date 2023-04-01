@@ -27,12 +27,6 @@ zinit light-mode lucid wait as"completion" blockf for \
         zsh-users/zsh-completions \
     gradle/gradle-completion
 
-zinit is-snippet lucid wait as"completion" blockf for \
-    has"cargo" \
-        https://github.com/rust-lang/cargo/blob/master/src/etc/_cargo \
-    has"docker" \
-        https://github.com/docker/cli/blob/master/contrib/completion/zsh/_docker
-
 zinit is-snippet lucid wait for \
     has"pyenv" \
         https://github.com/pyenv/pyenv/blob/master/completions/pyenv.zsh
@@ -42,11 +36,6 @@ zinit light-mode lucid for \
     tjquillan/p9k-theme-pastel \
     depth=1 \
         romkatv/powerlevel10k
-
-# ================== [QOL] ====================
-zinit light-mode lucid wait for \
-    tjquillan/zsh-pipenv \
-    tjquillan/zsh-gradle
 
 # ================= [Plugins] =================
 zinit light-mode lucid wait for \
