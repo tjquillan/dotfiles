@@ -1,0 +1,12 @@
+{{- if (lookPath "xdg-open") -}}
+alias open="xdg-open"
+{{ end -}}
+{{- if (lookPath "exa") -}}
+alias ls="exa -GFah --git"
+{{ end -}}
+{{- if (lookPath "bat") -}}
+alias cat="bat"
+{{ end -}}
+{{- if (lookPath "nvim") -}}
+alias nv="nvim"
+{{ end -}}
