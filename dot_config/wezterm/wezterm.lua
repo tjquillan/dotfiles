@@ -7,10 +7,6 @@ wezterm.on("gui-startup", function(cmd)
   window:gui_window():maximize()
 end)
 
--- Obtain current color scheme
-local color_scheme_name = "OneHalfDark"
-local color_scheme = wezterm.color.get_builtin_schemes()[color_scheme_name]
-
 -- Tab title
 wezterm.on(
   "format-tab-title",
@@ -30,53 +26,62 @@ wezterm.on(
   end
 )
 
-return {
-  -- Don't check for updates
-  check_for_updates = false,
-  -- Set the font
+-- This table will hold the configuration.
+local config = {}
+
+-- Set color scheme
+config.color_scheme = "OneHalfDark"
+local color_scheme = wezterm.color.get_builtin_schemes()[config.color_scheme]
+
+-- Don't check for updates
+config.check_for_updates = false
+
+
+-- Set the font
+config.font = wezterm.font_with_fallback({
+  "Fira Code",
+  { family = "Symbols Nerd Font Mono" },
+  { family = "JoyPixels", assume_emoji_presentation = true },
+})
+config.font_size = 12.0
+
+-- Stylize the tab bar
+config.use_fancy_tab_bar = true
+config.hide_tab_bar_if_only_one_tab = true
+config.tab_bar_at_bottom = true
+config.window_frame = {
   font = wezterm.font_with_fallback({
-    "Fira Code",
+    { family = "Roboto", weight = "Bold" },
     { family = "JoyPixels", assume_emoji_presentation = true },
   }),
   font_size = 12.0,
-  -- Set the color scheme
-  color_scheme = color_scheme_name,
-  -- Stylize the tab bar
-  use_fancy_tab_bar = true,
-  hide_tab_bar_if_only_one_tab = true,
-  tab_bar_at_bottom = true,
-  window_frame = {
-    font = wezterm.font_with_fallback({
-      { family = "Roboto", weight = "Bold" },
-      { family = "JoyPixels", assume_emoji_presentation = true },
-    }),
-    font_size = 12.0,
-    active_titlebar_bg = color_scheme.background,
-    inactive_titlebar_bg = color_scheme.background
-  },
-  colors = {
-    tab_bar = {
-      inactive_tab_edge = wezterm.color.parse(color_scheme.background):lighten(0.05),
-      active_tab = {
-        bg_color = wezterm.color.parse(color_scheme.background):lighten(0.1),
-        fg_color = color_scheme.foreground,
-      },
-      inactive_tab = {
-        bg_color = wezterm.color.parse(color_scheme.background):lighten(0.05),
-        fg_color = color_scheme.foreground,
-      },
-      inactive_tab_hover = {
-        bg_color = wezterm.color.parse(color_scheme.background):lighten(0.08),
-        fg_color = color_scheme.foreground,
-      },
-      new_tab = {
-        bg_color = color_scheme.background,
-        fg_color = color_scheme.foreground,
-      },
-      new_tab_hover = {
-        bg_color = color_scheme.background,
-        fg_color = color_scheme.ansi[3],
-      }
-    }
-  },
+  active_titlebar_bg = color_scheme.background,
+  inactive_titlebar_bg = color_scheme.background
 }
+config.colors = {
+  tab_bar = {
+    inactive_tab_edge = wezterm.color.parse(color_scheme.background):lighten(0.05),
+    active_tab = {
+      bg_color = wezterm.color.parse(color_scheme.background):lighten(0.1),
+      fg_color = color_scheme.foreground,
+    },
+    inactive_tab = {
+      bg_color = wezterm.color.parse(color_scheme.background):lighten(0.05),
+      fg_color = color_scheme.foreground,
+    },
+    inactive_tab_hover = {
+      bg_color = wezterm.color.parse(color_scheme.background):lighten(0.08),
+      fg_color = color_scheme.foreground,
+    },
+    new_tab = {
+      bg_color = color_scheme.background,
+      fg_color = color_scheme.foreground,
+    },
+    new_tab_hover = {
+      bg_color = color_scheme.background,
+      fg_color = color_scheme.ansi[3],
+    }
+  }
+}
+
+return config
