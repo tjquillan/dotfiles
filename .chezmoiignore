@@ -47,3 +47,8 @@ install.sh
 .zsh/
 .zshenv
 {{ end }}
+
+##### Atuin #####
+{{ if not (lookPath "atuin") }}
+.config/atuin/
+{{ end }}
