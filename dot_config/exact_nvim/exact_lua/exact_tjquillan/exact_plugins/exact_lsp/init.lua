@@ -55,7 +55,7 @@ function M.config()
         end
     end
 
-    require("tjquillan.plugins.null-ls").setup(options)
+    -- require("tjquillan.plugins.null-ls").setup(options)
 end
 
 return M
