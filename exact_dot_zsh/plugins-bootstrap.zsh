@@ -41,5 +41,6 @@ zinit light-mode lucid for \
 zinit light-mode lucid wait for \
     wfxr/forgit \
     ael-code/zsh-colored-man-pages \
+    romkatv/windows-terminal-zsh-integration \
     atinit"ZINIT[COMPINIT_OPTS]=-C; zicompinit; zicdreplay" \
         z-shell/F-Sy-H
