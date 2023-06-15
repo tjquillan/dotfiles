@@ -14,5 +14,6 @@ done
 # Bootstrap Zinit
 source "$ZDOTDIR/plugins-bootstrap.zsh"
 
-# Add local completions
-fpath=("$ZDOTDIR/completions" "$ZDOTDIR/completions/generated" $fpath)
+autoload -Uz promptinit
+promptinit
+prompt powerlevel10k

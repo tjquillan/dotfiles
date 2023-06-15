@@ -16,3 +16,7 @@ url = "https://github.com/tonsky/FiraCode/releases/download/6.2/Fira_Code_v6.2.z
 refreshPeriod = "168h"
 stripComponents = 1
 include = ["*.ttf"]
+
+[".zsh/.antidote"]
+type = "git-repo"
+url = "https://github.com/mattmc3/antidote.git"
