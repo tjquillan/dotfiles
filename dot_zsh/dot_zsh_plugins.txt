@@ -1,22 +1,27 @@
 # =============== [Completions] ===============
-$ZDOTDIR/.antidote/functions                kind:fpath
-$ZDOTDIR/completions                        kind:fpath
-$ZDOTDIR/completions/generated              kind:fpath
-zsh-users/zsh-completions                   kind:fpath  path:src
-gradle/gradle-completion                    kind:fpath
+##### Local Completions
+$ZDOTDIR/.antidote/functions                    kind:fpath
+$ZDOTDIR/completions                            kind:fpath
+$ZDOTDIR/completions/generated                  kind:fpath
 
-# Configure and run compinit to initialize completions
-belak/zsh-utils                             kind:zsh    path:completion
+##### Completions
+zsh-users/zsh-completions                       kind:fpath  path:src
+gradle/gradle-completion                        kind:fpath
+Freed-Wu/zsh-completions-for-cross-compilers    kind:fpath  path:src
+wehlando/efibootmgr-zsh-completion              kind:fpath
+
+##### Configure and Run Compinit
+belak/zsh-utils                                 kind:zsh    path:completion
 
 # ================= [Prompt] ==================
-tjquillan/p9k-theme-pastel                  kind:zsh
-romkatv/powerlevel10k                       kind:fpath
+tjquillan/p9k-theme-pastel                      kind:zsh
+romkatv/powerlevel10k                           kind:fpath
 
 # ================= [Utility Functions] ==================
-$ZDOTDIR/functions                          kind:fpath
+$ZDOTDIR/functions                              kind:fpath
 
 # ================= [Plugins] =================
-wfxr/forgit                                 kind:defer
-ael-code/zsh-colored-man-pages              kind:defer
-romkatv/windows-terminal-zsh-integration    kind:defer
-zdharma-continuum/fast-syntax-highlighting  kind:defer
+wfxr/forgit                                     kind:defer
+ael-code/zsh-colored-man-pages                  kind:defer
+romkatv/windows-terminal-zsh-integration        kind:defer
+zdharma-continuum/fast-syntax-highlighting      kind:defer
