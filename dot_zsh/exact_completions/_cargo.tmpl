@@ -1,0 +1,3 @@
+{{- if (and (lookPath "rustup") (lookPath "cargo")) -}}
+{{ output "rustup" "completions" "zsh" "cargo" | trim }}
+{{ end -}}
