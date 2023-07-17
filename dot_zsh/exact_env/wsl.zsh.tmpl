@@ -1,4 +1,4 @@
-{{- if (ne (output "grep" "-Po" "WSL\\d+" "/proc/version") "") -}}
+{{- if (include "/proc/version" | regexMatch "WSL\\d+") -}}
 {{- if (lookPath "wslview") -}}
 export BROWSER=wslview
 {{ end -}}
