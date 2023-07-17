@@ -17,7 +17,7 @@ belak/zsh-utils                                 kind:zsh    path:completion
 tjquillan/p9k-theme-pastel                      kind:zsh
 romkatv/powerlevel10k                           kind:fpath
 
-# ================= [Utility Functions] ==================
+# ============ [Utility Functions] ============
 $ZDOTDIR/functions                              kind:fpath
 
 # ================= [Plugins] =================
