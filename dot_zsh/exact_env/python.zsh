@@ -10,6 +10,8 @@ export PYLINTRC="$XDG_CONFIG_HOME"/pylint/pylintrc
 export CONDARC="$XDG_CONFIG_HOME/conda/condarc"
 # Pyenv (https://github.com/pyenv/pyenv)
 export PYENV_ROOT="$XDG_DATA_HOME/pyenv"
+# PipX (https://pypa.github.io/pipx/)
+export PIPX_HOME="$XDG_DATA_HOME/pipx"
 
 #### Path ####
 export PATH="$HOME/.local/bin:$PATH"
