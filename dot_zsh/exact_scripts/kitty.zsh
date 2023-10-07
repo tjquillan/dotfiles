@@ -6,7 +6,7 @@ if [[ ! -z "${KITTY_PID}" ]]; then
   precmd_functions+=(_kitty_set_title)
 
   # Kitten aliases
-  alias icat="kitty +kitten icat"
-  alias kdiff="kitty +kitten diff"
-  alias ssh="kitty +kitten ssh"
+  alias icat="kitten icat"
+  alias kdiff="kitten diff"
+  alias ssh="kitten ssh"
 fi
