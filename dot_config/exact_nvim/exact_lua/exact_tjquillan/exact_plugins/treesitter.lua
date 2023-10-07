@@ -5,6 +5,7 @@ local M = {
     event = { "BufReadPost", "BufNewFile", "CmdlineEnter" },
     cmd = {
         "TSUpdate",
+        "TSUpdateSync",
         "TSInstall",
     },
     dependencies = {

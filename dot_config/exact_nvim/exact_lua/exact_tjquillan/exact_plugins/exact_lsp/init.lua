@@ -4,58 +4,56 @@ local M = {
     dependencies = {
         "hrsh7th/cmp-nvim-lsp",
         "williamboman/mason-lspconfig.nvim",
-        "jose-elias-alvarez/typescript.nvim",
+        { "b0o/SchemaStore.nvim", version = false },
     },
 }
 
-M.signs = { Error = " ", Warn = " ", Hint = " ", Info = " " }
+---@class PluginLspOpts
+M.opts = {
+    diagnostics = {
+        underline = true,
+        update_in_insert = false,
+        virtual_text = {
+            spacing = 4,
+            source = "if_many",
+            prefix = "●",
+            -- this will set set the prefix to a function that returns the diagnostics icon based on the severity
+            -- this only works on a recent 0.10.0 build. Will be set to "●" when not supported
+            -- prefix = "icons",
+        },
+        severity_sort = true,
+    },
+    ---@type lspconfig.options
+    servers = {},
+    setup = {},
+}
 
-function M.init()
-    vim.keymap.set("n", "gl", function()
-        vim.diagnostic.open_float({ border = "rounded" })
-    end, { silent = true })
-    vim.keymap.set("n", "[d", function()
-        vim.diagnostic.goto_prev({ border = "rounded" })
-    end, { silent = true })
-    vim.keymap.set("n", "]d", function()
-        vim.diagnostic.goto_next({ border = "rounded" })
-    end, { silent = true })
-    vim.keymap.set("n", "<leader>q", vim.diagnostic.setloclist, { silent = true })
-
-    for type, icon in pairs(M.signs) do
-        local hl = "DiagnosticSign" .. type
-        vim.fn.sign_define(hl, { text = icon, texthl = hl, numhl = "" })
-    end
-end
-
-function M.config()
-    require("neodev").setup({})
-
-    require("mason")
-    require("tjquillan.plugins.lsp.diagnostics").setup()
-    require("neoconf").setup({})
-
-    local handlers = require("tjquillan.plugins.lsp.handlers")
-    local servers = require("tjquillan.plugins.lsp.servers")
-    local capabilities = vim.lsp.protocol.make_client_capabilities()
-    capabilities = require("cmp_nvim_lsp").default_capabilities(capabilities)
-
-    local options = {
-        on_attach = handlers.on_attach,
-        capabilities = capabilities,
-    }
+---@param opts PluginLspOpts
+M.config = function(_, opts)
+    vim.diagnostic.config(vim.deepcopy(opts.diagnostics))
+    local servers = opts.servers
+    local capabilities = require("cmp_nvim_lsp").default_capabilities()
 
     local lspconfig = require("lspconfig")
-    for server, opts in pairs(servers) do
-        opts = vim.tbl_deep_extend("force", {}, options, opts or {})
-        if server == "tsserver" then
-            require("typescript").setup({ server = opts })
-        else
-            lspconfig[server].setup(opts)
+    local function setup_server(server)
+        local server_opts = vim.tbl_deep_extend("force", {
+            capabilities = vim.deepcopy(capabilities),
+        }, servers[server] or {})
+
+        if opts.setup[server] and opts.setup[server](server, server_opts) then
+            return
         end
+
+        lspconfig[server].setup(server_opts)
     end
 
-    -- require("tjquillan.plugins.null-ls").setup(options)
+    local ensure_installed = {} ---@type string[]
+    for server, _ in pairs(servers) do
+        ensure_installed[#ensure_installed + 1] = server
+    end
+
+    local mason_lspconfig = require("mason-lspconfig")
+    mason_lspconfig.setup({ ensure_installed = ensure_installed, handlers = { setup_server } })
 end
 
 return M
