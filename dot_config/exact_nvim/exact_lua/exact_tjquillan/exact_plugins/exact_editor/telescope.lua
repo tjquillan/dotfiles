@@ -48,14 +48,14 @@ M.keys = {
     {
         "<leader>ff",
         function()
-            require("tjquillan.plugins.telescope").project_files()
+            require("tjquillan.plugins.editor.telescope").project_files()
         end,
         desc = "Find File",
     },
     {
         "<leader>fg",
         function()
-            require("tjquillan.plugins.telescope").project_files()
+            require("tjquillan.plugins.editor.telescope").project_files()
         end,
         desc = "Live Grep",
     },

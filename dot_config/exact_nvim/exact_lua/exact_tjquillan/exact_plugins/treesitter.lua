@@ -9,7 +9,6 @@ local M = {
         "TSInstall",
     },
     dependencies = {
-        "p00f/nvim-ts-rainbow",
         "windwp/nvim-ts-autotag",
         "JoosepAlviste/nvim-ts-context-commentstring",
     },
@@ -27,10 +26,6 @@ M.opts = {
     },
     autotag = {
         enable = true,
-    },
-    rainbow = {
-        enable = true,
-        extended_mode = true,
     },
     context_commentstring = {
         enable = true,

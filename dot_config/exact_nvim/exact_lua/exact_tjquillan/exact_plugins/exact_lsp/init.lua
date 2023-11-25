@@ -4,7 +4,8 @@ local M = {
     dependencies = {
         "hrsh7th/cmp-nvim-lsp",
         "williamboman/mason-lspconfig.nvim",
-        { "b0o/SchemaStore.nvim", version = false },
+        { "folke/neodev.nvim", opts = {} },
+        { "folke/neoconf.nvim", cmd = "Neoconf", config = false, dependencies = { "nvim-lspconfig" } },
     },
 }
 
@@ -30,6 +31,9 @@ M.opts = {
 
 ---@param opts PluginLspOpts
 M.config = function(_, opts)
+    local plugin = require("lazy.core.config").spec.plugins["neoconf.nvim"]
+    require("neoconf").setup(require("lazy.core.plugin").values(plugin, "opts", false))
+
     vim.diagnostic.config(vim.deepcopy(opts.diagnostics))
     local servers = opts.servers
     local capabilities = require("cmp_nvim_lsp").default_capabilities()
