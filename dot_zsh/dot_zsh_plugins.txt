@@ -13,6 +13,9 @@ wehlando/efibootmgr-zsh-completion              kind:fpath
 ##### Configure and Run Compinit
 belak/zsh-utils                                 kind:zsh    path:completion
 
+##### Additonal Completions (Needs compinit)
+g-plane/pnpm-shell-completion                   kind:zsh
+
 # ================= [Prompt] ==================
 tjquillan/p9k-theme-pastel                      kind:zsh
 romkatv/powerlevel10k                           kind:fpath
