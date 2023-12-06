@@ -27,10 +27,6 @@ M.opts = {
     autotag = {
         enable = true,
     },
-    context_commentstring = {
-        enable = true,
-        enable_autocmd = false,
-    },
 }
 
 ---@param opts TSConfig
