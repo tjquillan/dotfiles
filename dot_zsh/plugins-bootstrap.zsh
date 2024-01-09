@@ -1,10 +1,10 @@
 # Set the name of the static .zsh plugins file antidote will generate.
-zsh_plugins=${ZDOTDIR:-~}/.zsh_plugins.zsh
-
+zsh_plugins=${ZDOTDIR:-$HOME}/.zsh_plugins.zsh
+  
 zstyle ':antidote:bundle' use-friendly-names 'yes'
 
 # Lazy-load antidote.
-fpath+=(${ZDOTDIR:-~}/.antidote)
+fpath+=(${ZDOTDIR:-$HOME}/.antidote)
 autoload -Uz $fpath[-1]/antidote
 
 # Generate static file in a subshell when .zsh_plugins.txt is updated.
