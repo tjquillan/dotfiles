@@ -1,3 +1,5 @@
+typeset -U PATH
+
 # Set Path
 export PATH=/usr/local/bin:$PATH
 
