@@ -28,3 +28,10 @@ export ACKRC="$XDG_CONFIG_HOME/ack/ackrc"
 export ASDF_CONFIG_FILE="${XDG_CONFIG_HOME}/asdf/asdfrc"
 export ASDF_DATA_DIR="${XDG_DATA_HOME}/asdf"
 
+# CUDA
+export CUDA_CACHE_PATH="${XDG_CACHE_HOME}"/nv
+
+# GNU Parallel (https://www.gnu.org/software/parallel/)
+export PARALLEL_HOME="$XDG_CONFIG_HOME"/parallel
+
+
