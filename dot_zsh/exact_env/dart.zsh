@@ -5,6 +5,9 @@ export FVM_HOME="$XDG_DATA_HOME/fvm"
 # Pub (https://dart.dev/tools/pub/environment-variables)
 export PUB_CACHE="$XDG_CACHE_HOME/pub"
 
+# Dart Analyzer (https://github.com/dart-lang/sdk/tree/main/pkg/analyzer)
+export ANALYZER_STATE_LOCATION_OVERRIDE="$XDG_CACHE_HOME/dart_server"
+
 ##### Path #####
 export PATH="$FVM_HOME/default/bin:$PATH"
 
