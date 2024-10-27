@@ -40,3 +40,7 @@ style = "compact"
 
 # Choose a height for the inline history search
 inline_height = 40
+
+show_help = false
+show_tabs = false
+
