@@ -1,6 +1,6 @@
 ##### XDG Base Directory Specification Compliance #####
 # Fvm (https://fvm.app)
-export FVM_HOME="$XDG_DATA_HOME/fvm"
+export FVM_CACHE_PATH="$XDG_DATA_HOME/fvm"
 
 # Pub (https://dart.dev/tools/pub/environment-variables)
 export PUB_CACHE="$XDG_CACHE_HOME/pub"
@@ -9,5 +9,5 @@ export PUB_CACHE="$XDG_CACHE_HOME/pub"
 export ANALYZER_STATE_LOCATION_OVERRIDE="$XDG_CACHE_HOME/dart_server"
 
 ##### Path #####
-export PATH="$FVM_HOME/default/bin:$PATH"
+export PATH="$FVM_CACHE_PATH/default/bin:$PATH"
 
