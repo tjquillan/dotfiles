@@ -12,7 +12,7 @@ return {
         opts = {
             servers = {
                 ---@type lspconfig.options.tsserver
-                tsserver = {
+                ts_ls = {
                     keys = {
                         {
                             "<leader>co",
