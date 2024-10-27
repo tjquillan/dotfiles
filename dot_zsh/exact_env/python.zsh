@@ -20,15 +20,18 @@ export PYLINTRC="$XDG_CONFIG_HOME"/pylint/pylintrc
 # Conda (https://www.anaconda.com/)
 export CONDARC="$XDG_CONFIG_HOME/conda/condarc"
 
-# Pyenv (https://github.com/pyenv/pyenv)
-export PYENV_ROOT="$XDG_DATA_HOME/pyenv"
-
 # PipX (https://pypa.github.io/pipx/)
 export PIPX_HOME="$XDG_DATA_HOME/pipx"
 
+# Rye (https://rye-up.com/)
+export RYE_HOME="$XDG_DATA_HOME/rye"
+
+# Ruff (https://docs.astral.sh/ruff/)
+export RUFF_CACHE_DIR="$XDG_CACHE_HOME/ruff"
+
 #### Path ####
 export PATH="$HOME/.local/bin:$PATH"
-PATH="$PYENV_ROOT/bin:$PATH"
+PATH="$RYE_HOME/shims:$PATH"
 
 #### Pyenv ####
 export PYTHON_BUILD_ARIA2_OPTS="-x 10 -k 1M"
