@@ -1,9 +1,8 @@
 local wezterm = require("wezterm")
-local mux = wezterm.mux
 
 -- Manimize on startup
 wezterm.on("gui-startup", function(cmd)
-	local tab, pane, window = mux.spawn_window(cmd or {})
+	local tab, pane, window = wezterm.mux.spawn_window(cmd or {})
 	window:gui_window():maximize()
 end)
 
@@ -51,7 +50,7 @@ config.use_fancy_tab_bar = true
 config.hide_tab_bar_if_only_one_tab = true
 config.tab_bar_at_bottom = true
 config.show_new_tab_button_in_tab_bar = false
-config.show_close_tab_button_in_tab = false
+config.show_close_tab_button_in_tabs = false
 config.window_frame = {
 	font = wezterm.font_with_fallback({
 		{ family = "Roboto", weight = "Bold" },
