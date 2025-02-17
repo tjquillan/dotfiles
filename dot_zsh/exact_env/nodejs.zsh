@@ -12,3 +12,7 @@ export VOLTA_HOME="$XDG_DATA_HOME"/volta
 #### Path ####
 # Volta
 export PATH="$VOLTA_HOME/bin:$PATH"
+
+#### Other ####
+# Astro
+export ASTRO_TELEMETRY_DISABLED=1
