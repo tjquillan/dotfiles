@@ -1,8 +1,0 @@
-{{- if not (and (lookPath "pnpm") (lookPath "yarn")) -}}
-#!/bin/bash
-
-echo -e "\033[0;34m==> Enabling Corepack...\033[0m"
-
-corepack enable --install-directory "$HOME/.local/bin"
-
-{{ end -}}
