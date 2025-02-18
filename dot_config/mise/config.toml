@@ -1,0 +1,11 @@
+[tools]
+flutter = "latest"
+pnpm = "latest"
+usage = "latest"
+yarn = "1"
+zig = "latest"
+
+[settings]
+disable_hints = ["registry"]
+disable_tools = ["python"]
+
