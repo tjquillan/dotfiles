@@ -6,6 +6,11 @@
 .config/paru
 {{ end }}
 
+##### MacOS #####
+{{ if eq .chezmoi.os "darwin" }}
+./.zsh/env/gnome_keyring.zsh
+{{ end }}
+
 ##### Zsh #####
 # ZSH Bytecode Files
 **/*.zwc
