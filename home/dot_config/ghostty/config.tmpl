@@ -1,6 +1,6 @@
 theme = OneHalfDark
 
-{{- if eq .chezmoi.os "linux" }}
+{{- if and (eq .chezmoi.os "linux") (eq (output "printenv" "XDG_CURRENT_DESKTOP" | trim) "KDE") }}
 window-decoration = server
 {{- end }}
 
