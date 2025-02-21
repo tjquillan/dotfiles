@@ -1,6 +1,8 @@
 [tools]
 flutter = "latest"
 pnpm = "latest"
+ruby = "latest"
+rust = "latest"
 usage = "latest"
 yarn = "1"
 zig = "latest"
