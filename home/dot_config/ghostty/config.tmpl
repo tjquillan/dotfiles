@@ -1,5 +1,10 @@
 theme = OneHalfDark
 
+font-family = "Fira Code Retina"
+font-family-bold = "Fira Code Bold"
+
+cursor-style = bar
+
 {{- if and (eq .chezmoi.os "linux") (eq (output "printenv" "XDG_CURRENT_DESKTOP" | trim) "KDE") }}
 window-decoration = server
 {{- end }}
