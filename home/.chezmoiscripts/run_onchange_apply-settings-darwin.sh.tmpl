@@ -1,0 +1,31 @@
+{{- if eq .chezmoi.os "darwin" -}}
+#!/bin/bash
+
+# MacOS build version: {{ output "sw_vers" "--buildVersion" | trim }}
+
+#### Finder
+# Show extensions (https://macos-defaults.com/finder/appleshowallextensions.html)
+defaults write NSGlobalDomain "AppleShowAllExtensions" -bool "true"
+
+# Show hidden files (https://macos-defaults.com/finder/appleshowallfiles.html)
+defaults write com.apple.finder "AppleShowAllFiles" -bool "true"
+
+# Show path bar (https://macos-defaults.com/finder/showpathbar.html)
+defaults write com.apple.finder "ShowPathbar" -bool "true"
+
+# Set default view style to List View (https://macos-defaults.com/finder/fxpreferredviewstyle.html)
+defaults write com.apple.finder "FXPreferredViewStyle" -string "Nlsv"
+
+# Keep folders on top (https://macos-defaults.com/finder/_fxsortfoldersfirst.html)
+defaults write com.apple.finder "_FXSortFoldersFirst" -bool "true"
+
+# Set default search scope to the current folder (https://macos-defaults.com/finder/fxdefaultsearchscope.html)
+defaults write com.apple.finder "FXDefaultSearchScope" -string "SCcf"
+
+# Remove the delay when hovering the toolbar title (https://macos-defaults.com/finder/nstoolbartitleviewrolloverdelay.html)
+defaults write NSGlobalDomain "NSToolbarTitleViewRolloverDelay" -float "0"
+
+#### Restart Apps
+killall Finder
+
+{{ end -}}
