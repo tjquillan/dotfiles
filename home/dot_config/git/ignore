@@ -1,0 +1,14 @@
+# MacOS Files
+.DS_Store
+
+# Emacs Files
+*~
+\#*
+\.\#*
+
+# Direnv Files
+.envrc
+
+# Mise Files
+.mise.toml
+mise.toml
