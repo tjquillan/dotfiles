@@ -2,7 +2,7 @@
 **/.pytest_cache/
 
 ##### Arch Linux #####
-{{ if ne .chezmoi.osRelease.name "Arch Linux" }}
+{{ if or (ne .chezmoi.os "linux") (ne .chezmoi.osRelease.name "Arch Linux") }}
 .config/paru
 {{ end }}
 

@@ -1,4 +1,4 @@
-{{- if (include "/proc/version" | regexMatch "WSL\\d+") -}}
+{{- if and (eq .chezmoi.os "linux") (include "/proc/version" | regexMatch "WSL\\d+") -}}
 {{- if (lookPath "wslview") -}}
 export BROWSER=wslview
 {{ end -}}
