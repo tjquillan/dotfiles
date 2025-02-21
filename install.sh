@@ -1,3 +1,3 @@
 #!/bin/bash
 
-sh -c "$(curl -fsLS get.chezmoi.io)" -- init --apply tjquillan
+sh -c "$(curl -fsLS get.chezmoi.io)" -- -b $HOME/.local/bin init --apply tjquillan
