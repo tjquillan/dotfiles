@@ -1,5 +1,7 @@
 [tools]
 flutter = "latest"
+go = "latest"
+node = "latest"
 pnpm = "latest"
 ruby = "latest"
 rust = "latest"
