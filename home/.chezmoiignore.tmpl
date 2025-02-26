@@ -7,7 +7,9 @@
 {{ end }}
 
 ##### MacOS #####
+.hushlogin
 {{ if eq .chezmoi.os "darwin" }}
+!.hushlogin
 ./.zsh/env/gnome_keyring.zsh
 {{ end }}
 
