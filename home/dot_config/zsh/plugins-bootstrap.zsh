@@ -1,5 +1,5 @@
 # Set the name of the static .zsh plugins file antidote will generate.
-zsh_plugins=${ZDOTDIR:-$HOME}/.zsh_plugins.zsh
+zsh_plugins=${ZDOTDIR:-$HOME}/zsh_plugins.zsh
 
 zstyle ':antidote:bundle' use-friendly-names 'yes'
 

@@ -1,0 +1,8 @@
+{{- $templateFiles := glob ( joinPath .chezmoi.sourceDir ".chezmoitemplates" "zsh" "env" "**" "*.tmpl" ) -}}
+{{- range $templateFiles }}
+{{- $content := includeTemplate . $ | trim -}}
+{{- if $content }}
+#### File: {{ base . }}
+{{ $content }}
+{{ end }}
+{{- end }}

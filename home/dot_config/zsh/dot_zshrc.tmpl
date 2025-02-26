@@ -1,0 +1,14 @@
+{{- $templateFiles := glob ( joinPath .chezmoi.sourceDir ".chezmoitemplates" "zsh" "rc" "**" "*.tmpl" ) -}}
+{{- range $templateFiles }}
+{{- $content := includeTemplate . $ | trim -}}
+{{- if $content }}
+#### File: {{ base . }}
+{{ $content }}
+{{ end }}
+{{- end }}
+
+# Bootstrap Zinit
+source "$ZDOTDIR/plugins-bootstrap.zsh"
+
+autoload -Uz promptinit && promptinit
+prompt powerlevel10k
