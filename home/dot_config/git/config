@@ -1,22 +1,18 @@
 [core]
 	editor = nvim
-
 [user]
 	name = tjquillan
 	email = tjquillan@gmail.com
 	signingkey = ~/.ssh/git_signingkey.pub
-
 [gpg]
 	format = ssh
-
 [commit]
 	gpgsign = true
-
 [pull]
 	rebase = true
-
 [fetch]
 	prune = true
-
 [init]
 	defaultBranch = main
+[alias]
+	subu = submodule update --init --recursive
