@@ -25,6 +25,9 @@ defaults write com.apple.finder "FXDefaultSearchScope" -string "SCcf"
 # Remove the delay when hovering the toolbar title (https://macos-defaults.com/finder/nstoolbartitleviewrolloverdelay.html)
 defaults write NSGlobalDomain "NSToolbarTitleViewRolloverDelay" -float "0"
 
+# Disable System Settings > Spotlight > Help Apple Improve Search
+defaults write "com.apple.assistant.support" "Search Queries Data Sharing Status" -int 2
+
 #### Restart Apps
 killall Finder
 
