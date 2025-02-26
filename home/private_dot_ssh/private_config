@@ -1,0 +1,18 @@
+Host *
+  UseKeychain yes
+  AddKeysToAgent yes
+  IgnoreUnknown UseKeychain
+
+Host aur.archlinux.org
+  User aur
+  IdentityFile ~/.ssh/aur
+
+Host *.mtu.edu
+  User tquillan
+  IdentityFile ~/.ssh/mtu
+
+Host gitlab.com
+  IdentityFile ~/.ssh/gitlab
+
+Host github.com
+  IdentityFile ~/.ssh/github
