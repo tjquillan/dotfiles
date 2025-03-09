@@ -1,0 +1,8 @@
+{{- if eq .chezmoi.os "darwin" -}}
+{{- $brewfile := (joinPath .chezmoi.workingTree "Brewfile") -}}
+#!/bin/bash
+
+# Brewfile Hash: {{ include $brewfile | sha256sum }}
+brew bundle install --file={{ $brewfile }}
+
+{{ end -}}
