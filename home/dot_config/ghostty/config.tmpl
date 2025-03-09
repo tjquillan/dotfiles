@@ -5,6 +5,9 @@ font-family-bold = "Fira Code Bold"
 
 cursor-style = bar
 
+# Disable shell integration
+shell-integration = none
+
 {{- if and (eq .chezmoi.os "linux") (eq (output "printenv" "XDG_CURRENT_DESKTOP" | trim) "KDE") }}
 window-decoration = server
 {{- end }}
