@@ -1,2 +1,4 @@
 ##### XDG Base Directory Specification Compliance #####
+{{- if ne .chezmoi.os "darwin" -}}
 export DOCKER_CONFIG="$XDG_CONFIG_HOME/docker"
+{{ end -}}
