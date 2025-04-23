@@ -1,12 +1,16 @@
 [tools]
+cargo-binstall = "latest"
 flutter = "latest"
 go = "latest"
 node = "latest"
 pnpm = "latest"
 ruby = "latest"
-rust = "latest"
+rust = "stable"
+slsa-verifier = "latest"
 yarn = "1"
 zig = "latest"
+cosign = "latest"
+"cargo:cargo-outdated" = "latest"
 
 [settings]
 disable_hints = ["registry"]
