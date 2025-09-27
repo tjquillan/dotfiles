@@ -8,7 +8,7 @@ cursor-style = bar
 # Disable shell integration
 shell-integration = none
 
-{{- if and (eq .chezmoi.os "linux") (eq (output "printenv" "XDG_CURRENT_DESKTOP" | trim) "KDE") }}
+{{- if and (eq .chezmoi.os "linux") (eq (env "XDG_CURRENT_DESKTOP") "KDE") }}
 window-decoration = server
 {{- end }}
 
