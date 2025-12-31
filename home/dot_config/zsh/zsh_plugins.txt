@@ -12,7 +12,7 @@ wehlando/efibootmgr-zsh-completion              kind:fpath
 ziglang/shell-completions                       kind:fpath
 
 ##### Configure and Run Compinit
-belak/zsh-utils                                 kind:zsh    path:completion
+mattmc3/zephyr                                 kind:zsh    path:plugins/completion
 
 ##### Additonal Completions (Needs compinit)
 #g-plane/pnpm-shell-completion                   kind:zsh
