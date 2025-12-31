@@ -11,6 +11,8 @@ yarn = "1"
 zig = "latest"
 cosign = "latest"
 "cargo:cargo-outdated" = "latest"
+bun = "latest"
+pipx = "latest"
 
 [settings]
 disable_hints = ["registry"]
