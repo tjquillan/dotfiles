@@ -11,6 +11,7 @@ brew "less"
 brew "mise"
 brew "neovim"
 brew "uv"
+brew "watch"
 brew "watchman"
 brew "wget"
 
