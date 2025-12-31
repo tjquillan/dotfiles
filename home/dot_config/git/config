@@ -12,7 +12,21 @@
 	rebase = true
 [fetch]
 	prune = true
+	pruneTags = true
+	all = true
 [init]
 	defaultBranch = main
 [alias]
 	subu = submodule update --init --recursive
+[diff]
+	algorithm = histogram
+	colorMoved = plain
+	mnemonicPrefix = true
+	renames = true
+[branch]
+	sort = -committerdate
+[tag]
+	sort = version:refname
+[push]
+	autoSetupRemote = true
+	followTags = true
