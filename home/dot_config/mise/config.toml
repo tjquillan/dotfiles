@@ -13,8 +13,8 @@ cosign = "latest"
 "cargo:cargo-outdated" = "latest"
 bun = "latest"
 pipx = "latest"
+usage = "latest"
 
 [settings]
 disable_hints = ["registry"]
 disable_tools = ["python"]
-
