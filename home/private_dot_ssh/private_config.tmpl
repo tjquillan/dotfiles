@@ -4,9 +4,9 @@ Include ~/.orbstack/ssh/config
 {{- end }}
 
 Host *
+  IgnoreUnknown UseKeychain
   UseKeychain yes
   AddKeysToAgent yes
-  IgnoreUnknown UseKeychain
 
 Host aur.archlinux.org
   User aur
