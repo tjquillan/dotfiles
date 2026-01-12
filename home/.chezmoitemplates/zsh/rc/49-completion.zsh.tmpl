@@ -31,3 +31,7 @@ zstyle ':completion:*' list-colors ${(s.:.)LS_COLORS}
 
 # Complete . and .. special directories
 zstyle ':completion:*' special-dirs true
+
+# Don't perform a path search even on command names with slashes in them
+# See PATH_DIRS in: https://zsh.sourceforge.io/Doc/Release/Options.html
+unsetopt pathdirs
