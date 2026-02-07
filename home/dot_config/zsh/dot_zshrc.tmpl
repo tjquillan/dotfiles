@@ -12,3 +12,7 @@ source "$ZDOTDIR/plugins-bootstrap.zsh"
 
 autoload -Uz promptinit && promptinit
 prompt powerlevel10k
+
+# Don't perform a path search even on command names with slashes in them
+# See PATH_DIRS in: https://zsh.sourceforge.io/Doc/Release/Options.html
+unsetopt pathdirs
