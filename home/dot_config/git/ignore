@@ -12,3 +12,6 @@
 # Mise Files
 .mise.toml
 mise.toml
+
+# Claude Code
+**/.claude/settings.local.json
