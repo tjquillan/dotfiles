@@ -1,6 +1,5 @@
 [tools]
 cargo-binstall = "latest"
-flutter = "latest"
 go = "latest"
 node = "latest"
 pnpm = "latest"
