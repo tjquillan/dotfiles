@@ -18,5 +18,8 @@ usage = "latest"
 disable_hints = ["registry"]
 disable_tools = ["python"]
 
+[settings.ruby]
+compile = false
+
 [settings.github]
 gh_cli_tokens = false
