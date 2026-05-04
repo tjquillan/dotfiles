@@ -17,6 +17,7 @@ usage = "latest"
 [settings]
 disable_hints = ["registry"]
 disable_tools = ["python"]
+idiomatic_version_file_enable_tools = ["rust"]
 
 [settings.ruby]
 compile = false
